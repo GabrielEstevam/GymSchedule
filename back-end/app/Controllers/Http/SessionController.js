@@ -3,7 +3,7 @@
 const User = use('App/Models/User')
 
 class SessionController {
-  async create ({request, auth}) {
+  async login ({request, auth}) {
     const {username, password} = request.all()
     const queryByUsername = await User.findByOrFail('username', username)
     const email = queryByUsername.email
