@@ -2,6 +2,13 @@
 
 Desenvolvimento de uma aplicação para agendamento de horários em academias de condomínios.
 
+## Primeira Iteração
+- Implementação do back-end utilizando a linguagem JavaScript e a plataforma NodeJS.
+- Autenticação JWT utilizando framework Adonis JS.
+- API REST.
+- Persistência em banco de dados SQLite.
+
+
 ## Execução do back-end
 Entre no diretório do back-end
 ```
