@@ -53,3 +53,9 @@ Acesse a página no navegador
 ```
 http://localhost:3000/
 ```
+
+### Resetar banco de dados
+Apagar arquivo 'database/adonis.sqlite' e executar o comando
+```
+adonis migration:run
+```
