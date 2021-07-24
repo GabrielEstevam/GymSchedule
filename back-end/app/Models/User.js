@@ -32,9 +32,9 @@ class User extends Model {
     return this.hasMany('App/Models/Token')
   }
 
-  // user can have many transaction
-  transactions () {
-    return this.hasMany('App/Models/Transaction')
+  // user can have many dates
+  dates () {
+    return this.hasMany('App/Models/Date')
   }
 }
 

@@ -1,0 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+
+body {
+  font-family: Roboto, Arial, sans-serif;
+  background: #3e1f47;
+  color:#333;
+}
