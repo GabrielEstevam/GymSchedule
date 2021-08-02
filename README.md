@@ -1,4 +1,4 @@
-<img src=front-end/src/assets/logo.png width=200px>
+<img src=front-end/src/assets/logo.png width=200px align=center>
 
 # GymSchedule
 
