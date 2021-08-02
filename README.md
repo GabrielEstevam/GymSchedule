@@ -1,3 +1,5 @@
+<p align="center"><img src=front-end/src/assets/logo.png width=200px ></p>
+
 # GymSchedule
 
 Desenvolvimento de uma aplicação para agendamento de horários em academias de condomínios.
