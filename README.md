@@ -1,4 +1,4 @@
-![Screenshot](front-end/src/assets/logo.png)
+![Screenshot](front-end/src/assets/logo.png | width=100)
 
 # GymSchedule
 
