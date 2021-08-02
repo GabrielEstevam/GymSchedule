@@ -1,3 +1,5 @@
+![Screenshot](front-end/src/assets/logo.png)
+
 # GymSchedule
 
 Desenvolvimento de uma aplicação para agendamento de horários em academias de condomínios.
