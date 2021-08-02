@@ -1,4 +1,4 @@
-![](https://github.com/GabrielEstevam/GymSchedule/blob/main/front-end/src/assets/logo.png | width=100}
+![]<img src=front-end/src/assets/logo.png width=100>
 
 # GymSchedule
 
