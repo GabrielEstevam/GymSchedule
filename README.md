@@ -20,6 +20,18 @@ O desenvolvimento foi realizado em três iterações. A seguir é descrito o que
 - Implementação do front-end utilizando ReactJS.
 - Implementação da funcionalidade de agendamentos de horários.
 
+#### Screeshots
+- Tela de Cadastro
+<p align="center"><img src=front-end/screenshots/tela2.png width=500px ></p>
+- Tela de Login
+<p align="center"><img src=front-end/screenshots/tela1.png width=500px ></p>
+- Tela de Principal
+<p align="center"><img src=front-end/screenshots/tela3.png width=500px ></p>
+- Reserva
+<p align="center"><img src=front-end/screenshots/tela4.png width=500px ></p>
+- Confirmação da Reserva
+<p align="center"><img src=front-end/screenshots/tela5.png width=500px ></p>
+
 ## Execução
 
 Para executar a aplicação é necessário rodar o back-end e o front-end em terminais separados, como descrito a seguir.
