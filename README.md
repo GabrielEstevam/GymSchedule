@@ -20,7 +20,11 @@ O desenvolvimento foi realizado em três iterações. A seguir é descrito o que
 - Implementação do front-end utilizando ReactJS.
 - Implementação da funcionalidade de agendamentos de horários.
 
-#### Screeshots
+### Terceira Iteração
+- Implementação da consulta de agendamentos de horários.
+- Implementação do cancelamento de reserva de horário.
+
+## Screeshots
 - Tela de Cadastro
 <p align="center"><img src=front-end/screenshots/tela2.png width=500px ></p>
 - Tela de Login
@@ -31,6 +35,8 @@ O desenvolvimento foi realizado em três iterações. A seguir é descrito o que
 <p align="center"><img src=front-end/screenshots/tela4.png width=500px ></p>
 - Confirmação da Reserva
 <p align="center"><img src=front-end/screenshots/tela5.png width=500px ></p>
+- Cancelamento
+<p align="center"><img src=front-end/screenshots/tela6.png width=500px ></p>
 
 ## Execução
 
