@@ -21,9 +21,27 @@ class DateController {
   async getDay ({ request }) {
     const data = request.only(['day'])
     console.log(data)
-    const result = await Database.table('dates').where('day', data.day)
-    console.log(result)
-    return result
+    const result = await Database.select('slot', 'apartment').table('dates').where('day', data.day)
+    let array_result = []
+    for (let i = 0; i < 15; i++) {
+      array_result.push({slot: String(i+1), apartment: ''})
+    }
+    for (let i = 0; i < result.length; i++) {
+      array_result[parseInt(result[i].slot) - 1].apartment = result[i].apartment
+    }
+    return array_result
+  }
+
+  async getUserReserves ({ request, auth }) {
+    const reserves = await Database.select('id', 'day', 'slot').table('dates').where('user_id', auth.user.id)
+    return reserves
+  }
+
+  async cancelReserve ({request, auth}) {
+    const reserve_id = request.only(['id'])
+    const reserve = await Date.findOrFail(reserve_id.id)
+    await reserve.delete()
+    return '0'
   }
 }
 

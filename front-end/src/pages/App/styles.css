@@ -25,7 +25,7 @@
   width: 100%;
 }
 
-.txs-list, .main-div1, .input-hash{
+.main-div1, .input-hash{
   max-width: 750px;
   margin: 10px auto 0;
   padding: 20px 20px;
@@ -34,21 +34,33 @@
   border-radius: 5px;
 }
 
+.txs-list{
+  max-width: 750px;
+  margin: 10px auto 10px;
+  padding: 15px 20px 15px 20px;
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 5px;
+  text-align: center;
+}
+
 .div_label {
   display: flex;
   flex-wrap: wrap;
 }
 
 .p_text1 {
-  flex: 0 0 85%;
-  max-width: 85%;
-  padding: 9px;
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding: 1px;
+  text-align: center;
 }
 
 .p_text2 {
-  flex: 0 0 15%;
-  max-width: 15%;
-  padding: 9px;
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding: 1px;
+  text-align: center;
 }
 
 .div1 {

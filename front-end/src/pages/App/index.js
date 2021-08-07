@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import Select from 'react-select'
-import { withRouter/*, Link*/ } from "react-router-dom"
+import { withRouter, Link } from "react-router-dom"
 
 import Header from "./components/header/index.js"
 import api from "../../services/api"
@@ -14,13 +14,15 @@ import 'react-calendar/dist/Calendar.css';
 
 
 class App extends Component {
-  /*constructor() {
+  constructor() {
     super()
-  }*/
+    this.loadReserves()
+  }
 
   state = {
+    reserves: [],
     day: 'Dia',
-    slots: [],
+    slots: [/*{slot:'1', apartment:'1'}*/],
     slot_select: '',
     options: [
       { value: '1', label: '7:00 h' },
@@ -41,26 +43,22 @@ class App extends Component {
     ]
   }
 
-  loadDay = async () => {
-    /*try {
-      const response = await api.post("/getDay", {
-        params: {}
-      })
-      this.setState({txs: response.data})
+  loadReserves = async () => {
+    try {
+      const response = await api.post("/getUserReserves", {})
+      this.setState({reserves: response.data})
     } catch (err) {
       console.log(err)
-    }*/
-  }
+    }
+  } 
 
-  setSlot = async () => {
-    /*try {
-      const response = await api.post("/setSlot", {slot:this.state.slot})
-      if (response.data === 1)
-        alert ('Reserva feita com sucesso')
-      this.loadDay()
+  loadDay = async (day_selected) => {
+    try {
+      const response = await api.post("/getDay", {day:day_selected})
+      this.setState({slots: response.data})
     } catch (err) {
       console.log(err)
-    }*/
+    }
   }
 
   logoutUser = e => {
@@ -72,6 +70,7 @@ class App extends Component {
     let data = response.toString().split(' ')
     data = data[2] + " " + data[1] + " " + data[3]
     this.setState({day: data})
+    this.loadDay(data)
   }
 
   reserve = async () => {
@@ -93,11 +92,75 @@ class App extends Component {
     }
   }
 
+  cancel = async (reserve_id) => {
+    if (window.confirm('Você tem certeza que deseja cancelar essa reserva?')) {
+      await api.post(`/cancelReserve`, {id:reserve_id})
+      this.loadReserves()
+    }
+  }
+
   render() {
     return (
       <React.Fragment>
         <div className="App"><Header /></div>
         <button type="submit" className="logout" onClick={this.logoutUser}>Sair</button>
+        <div className="txs-list">
+          <div className="div_label">
+            <div className="p_text1">
+              <p>Reserva</p>
+            </div>
+            <div className="p_text2"></div>
+          </div>
+          <hr className="hrm" />
+          
+          {this.state.reserves.map(reserve => <article key={reserve.id}>
+          <div className="div_label">
+            <div className="p_text1"><p className='reserve'>
+              {(() => {
+                switch (reserve.slot) {
+                  case '1':
+                    return reserve.day + ' 7:00 h'
+                  case '2':
+                    return reserve.day + ' 8:00 h'
+                  case '3':
+                    return reserve.day + ' 9:00 h'
+                  case '4':
+                    return reserve.day + ' 10:00 h'
+                  case '5':
+                    return reserve.day + ' 11:00 h'
+                  case '6':
+                    return reserve.day + ' 12:00 h'
+                  case '7':
+                    return reserve.day + ' 13:00 h'
+                  case '8':
+                    return reserve.day + ' 14:00 h'  
+                  case '9':
+                    return reserve.day + ' 15:00 h'
+                  case '10':
+                    return reserve.day + ' 16:00 h'
+                  case '11':
+                    return reserve.day + ' 17:00 h'
+                  case '12':
+                    return reserve.day + ' 18:00 h'
+                  case '13':
+                    return reserve.day + ' 19:00 h'
+                  case '14':
+                    return reserve.day + ' 20:00 h'
+                  case '15':
+                    return reserve.day + ' 21:00 h'
+                  default:
+                    return ''
+                }
+              })()}
+            </p></div>
+            <div className="p_text2">
+              <div className="div_cancel">
+                <Link to='/app' type="submit" className="cancel" onClick={() => this.cancel(reserve.id)}>Cancelar</Link>
+              </div>
+            </div>
+          </div>
+          </article>)
+        }</div>
         <div className="main-div1">
           <div className="div_label">
             <p>Calendário</p>
@@ -123,21 +186,58 @@ class App extends Component {
         <div className="txs-list">
           <div className="div_label">
             <div className="p_text1">
-              <p>{this.state.value}</p>
+              <p>{this.state.day}</p>
             </div>
-            <div className="p_text2">Reserva</div>
+            <div className="p_text2">Apartamento</div>
           </div>
           <hr className="hrm" />
-          {this.state.slots.map(slot => <article key={slot.id}>
+          {this.state.slots.map(slot => <article key={slot.slot}>
           <div className="div_label">
-            <div className="p_text1"><p>{slot.id}</p></div>
+            <div className="p_text1"><p className='slot'>
+              {(() => {
+                switch (slot.slot) {
+                  case '1':
+                    return '7:00 h'
+                  case '2':
+                    return '8:00 h'
+                  case '3':
+                    return '9:00 h'
+                  case '4':
+                    return '10:00 h'
+                  case '5':
+                    return '11:00 h'
+                  case '6':
+                    return '12:00 h'
+                  case '7':
+                    return '13:00 h'
+                  case '8':
+                    return '14:00 h'  
+                  case '9':
+                    return '15:00 h'
+                  case '10':
+                    return '16:00 h'
+                  case '11':
+                    return '17:00 h'
+                  case '12':
+                    return '18:00 h'
+                  case '13':
+                    return '19:00 h'
+                  case '14':
+                    return '20:00 h'
+                  case '15':
+                    return '21:00 h'
+                  default:
+                      return ''
+                }
+              })()}
+            </p></div>
             <div className="p_text2"><p className="status">
-            {(() => {
-              if (slot.status === '1')
-                return "Aberto"
-              return "Reservado"
-            })()}
-          </p></div>
+              {(() => {
+                if (slot.apartment !== '')
+                  return slot.apartment
+                return 'Livre'
+              })()}
+            </p></div>
           </div>
           </article>)
         }</div>
