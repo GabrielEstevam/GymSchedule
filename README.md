@@ -45,6 +45,10 @@ O desenvolvimento foi realizado em três iterações. A seguir é descrito o que
 
 ## Execução
 
+Requerimentos:
+- Node v11.15.0 ou superior.
+- NPM v6.7.0 ou superior.
+
 Para executar a aplicação é necessário rodar o back-end e o front-end em terminais separados, como descrito a seguir.
 
 ### Execução do back-end
