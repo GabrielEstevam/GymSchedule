@@ -88,3 +88,15 @@ Apagar arquivo 'database/adonis.sqlite' e executar o comando
 ```
 adonis migration:run
 ```
+
+## Execução com Docker
+
+Requerimentos:
+- Docker v19.03.6 ou superior.
+- docker-compose v1.29.2 ou superior.
+
+Para construir a aplicação basta executar o seguinte comando:
+
+```
+./initing_application.sh
+```
