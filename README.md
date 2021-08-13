@@ -100,3 +100,8 @@ Para construir a aplicação basta executar o seguinte comando:
 ```
 ./initing_application.sh
 ```
+
+Acesse a página no navegador
+```
+http://localhost:3001/
+```
